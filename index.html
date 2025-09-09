@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JORURI SEBA</title>
+    <title>emergency-service</title>
 
 <!-- daisy ui cdn -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
@@ -27,7 +27,7 @@
                     <img src="./assets/heart.png" alt="" class="h-5 "></button>
                 </div>
                 <div>
-                    <button class="btn btn-lg rounded-3xl bg-[#41ff6b1a]"><span class="">100</span><img src="./assets/coin.png" alt="" class="h-5">
+                    <button class="btn btn-lg rounded-3xl bg-[#41ff6b1a]"><span id="coin">100</span><img src="./assets/coin.png" alt="" class="h-5">
                     </button>
                 </div>
                 <div>
@@ -37,7 +37,7 @@
         </div>
     </div>
 
-    <div class="bg-gradient-to-r from-green-900 to-green-800 text-white text-center p-8">
+    <div class="bg-[radial-gradient(circle,_#006747,_#013223)] text-white text-center p-8">
         <div class="flex flex-col items-center gap-4">
             <div>
                 <img src="./assets/logo-dark.png" alt="" class="h-20">
@@ -73,7 +73,7 @@
                                 <span>Copy</span>
                             </button>
 
-                            <button class="flex items-center gap-2 px-5 py-1 rounded-2xl bg-[#00A63E] text-white">
+                            <button id="callBtn" class="flex items-center gap-2 px-5 py-1 rounded-2xl bg-[#00A63E] text-white">
                                 <i class="fa fa-phone"></i>
                                 <span>Call</span>
                             </button>
@@ -274,7 +274,7 @@
                                 <span>Copy</span>
                             </button>
                             <button class="flex items-center gap-2 px-5 py-1 rounded-2xl bg-[#00A63E] text-white">
-                                <i class="fa fa-phone"></i>
+                                <i class="fa fa-phone "></i>
                                 <span>Call</span>
                             </button>                    
                         </div>
