@@ -17,7 +17,7 @@ Event bubbling works when an event happens on an element and then moves up to it
 Event delegation works when one event listener is added to a parent element instead of many listeners to each child.
 
 
-Difference between preventDefault() and stopPropagation() :
-                    * preventDefault() stops the browser’s default action.
+Difference between preventDefault() and stopPropagation():
 
-                    * stopPropagation() stops the event from bubbling up to parent elements.
+                * preventDefault() stops the browser’s default action.
+                * stopPropagation() stops the event from bubbling up to parent elements.

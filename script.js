@@ -13,38 +13,6 @@ window.onload = function(e){
 }
 
 
-
-// document.addEventListener('DOMContentLoaded', function(){
-//     const coin = document.getElementById("coin");
-//     const callHistory = document.getElementById("clearHistory");
-//     const historyClear = document.getElementById("clearHistoryBtn");
-//     const callButtons = document.querySelectorAll(".bg-[#00A63E].text-white");
-
-//     for(button of callButtons){
-//         button.addEventListener('click', function(){
-//             const card = button.closest(".space-y-3");
-//             const name = card.querySelector("h3.font-bold.text-xl").innerText;
-//             const number = card.querySelector("h3.font-bold.text-2xl").innerText;
-
-//         let currentCoins = parseInt(coin.innerText);
-
-//         if(currentCoins < 20){
-//             alert("You don't have enough coins to make a call.");
-//             return;
-//         }
-//         currentCoins -= 20;
-//         coin.innerText = currentCoins;
-//         alert(`Calling ${name}  ${number}`);
-
-//     })
-// }
-
-// })
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function(){
     const coin = document.getElementById("coin");
     const callHistory = document.getElementById("clearHistory");
@@ -89,11 +57,11 @@ document.addEventListener('DOMContentLoaded', function(){
         const historyItem = document.createElement("div");
         historyItem.className = "bg-gray-100 p-3 rounded-md text-base ";
         historyItem.innerHTML = `
-            <div class="flex justify-between items-center font-semibold text-[#111] mb-1">
+            <div class="flex justify-between items-center font-semibold text-[#111] mb-3">
             <span>${name}</span>
-            <span class="text-gray-500 text-xs">${time}</span>
+            <span class="text-gray-500 text-sm">${time}</span>
             </div>
-            <div class="text-gray-700 text-sm">${number}</div>
+            <div class="text-gray-700 text-base">${number}</div>
         `;
         callHistory.prepend(historyItem);
     }
@@ -101,3 +69,27 @@ document.addEventListener('DOMContentLoaded', function(){
     callHistory.innerHTML = "";
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function(){
+    const copyBtns = document.querySelectorAll('button span')
+    const copyCountEle = document.getElementById('copyCount')
+    let copyCount = 0 ; 
+
+    copyBtns.forEach(function(span){
+        if(span.innerText.trim().toLowerCase() === 'copy'){
+            span.parentElement.addEventListener('click', function(){
+                const card = this.closest('.space-y-3'); 
+                const numberElement = card.querySelector('h3.font-bold.text-2xl');
+                const numberToCopy = numberElement.innerText.trim();
+
+                navigator.clipboard.writeText(numberToCopy).then(function(){
+                    alert( 'this hotline number is copied' + ' ' + numberToCopy);
+                    copyCount++ ;
+                    copyCountEle.innerText = copyCount;     
+                })
+            })
+        }
+    })
+
+})
